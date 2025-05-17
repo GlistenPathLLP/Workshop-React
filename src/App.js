@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React,{createContext} from 'react';
+import { Parent } from './useContext/parent';
+//import { StateExample } from './hooks/statesExample';
+//import { BindingExample } from './bindingExample';
+//import { Controlled } from './controlledUncontrolled/controlled';
+//import { UnControlled } from './controlledUncontrolled/unControlled';
+
+export const AppTheme = createContext() 
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const theme = "dark"
+  return(
+    <AppTheme.Provider value={theme}>
+    <div className='App'>
+      <Parent/>
     </div>
-  );
+    </AppTheme.Provider>
+  )
 }
 
 export default App;
