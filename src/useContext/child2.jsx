@@ -1,9 +1,9 @@
 import React,{useContext} from 'react';
-import { AppTheme } from '../App';
+/* import { AppTheme } from '../App'; */
 
 export const Child2 = () => {
-    const theme = useContext(AppTheme)
+    //const theme = useContext(AppTheme)
     return (<div>
-        <p>Child2 {theme}</p>
+        <p>Child2 </p>
     </div>)
 }

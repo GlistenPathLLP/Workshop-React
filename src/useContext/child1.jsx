@@ -1,9 +1,13 @@
-import React from 'react';
-import { Child2 } from './child2';
+import React, { useEffect } from 'react';
 
-export const Child1 = () => {
+export const Child1 = React.memo(({counter, increment}) => {
+
+    useEffect(()=>{
+        console.log('render child')
+    })
     return (<div>
         <p>Child1</p>
-        <Child2/>
+        <p>{counter}</p>
+        <button onClick={increment}>increment</button>
     </div>)
-}
+})
